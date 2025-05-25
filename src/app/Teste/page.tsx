@@ -8,12 +8,8 @@ const Dashboard = () => {
             <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
             <p className="text-lg">Welcome to the dashboard!</p>
             
-            <Button variant='destructive'>
+            <Button variant='destructive' className="mt-4">
                 teste
-            </Button>
-
-            <Button variant='default'>
-                testeqq
             </Button>
 
         </div>

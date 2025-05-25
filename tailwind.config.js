@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+const { createPreset } = require('tailwindcss-shadcn-ui');
+
 module.exports = {
+  presets: [ createPreset() ],
   content: [
     "./src/app/**/*.{ts,tsx}",
     "./src/components/**/*.{ts,tsx}",
@@ -8,21 +11,8 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      colors: {
-        primary:                  "hsl(var(--primary))",
-        "primary-foreground":     "hsl(var(--primary-foreground))",
-        destructive:              "hsl(var(--destructive))",
-        "destructive-foreground": "hsl(var(--destructive-foreground))",
-        secondary:                "hsl(var(--secondary))",
-        "secondary-foreground":   "hsl(var(--secondary-foreground))",
-        ghost:                    "hsl(var(--ghost))",
-        "ghost-foreground":       "hsl(var(--ghost-foreground))",
-        accent:                   "hsl(var(--accent))",
-        "accent-foreground":      "hsl(var(--accent-foreground))",
-      },
     },
   },
   plugins: [
-    require("tw-animate-css"),
   ],
-};
+}

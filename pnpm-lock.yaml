@@ -69,6 +69,9 @@ importers:
       tailwindcss:
         specifier: ^4
         version: 4.1.7
+      tailwindcss-shadcn-ui:
+        specifier: ^0.2.0
+        version: 0.2.0(tailwindcss-animate@1.0.7(tailwindcss@4.1.7))(tailwindcss@4.1.7)
       tw-animate-css:
         specifier: ^1.3.0
         version: 1.3.0
@@ -1948,6 +1951,18 @@ packages:
 
   tailwind-merge@3.3.0:
     resolution: {integrity: sha512-fyW/pEfcQSiigd5SNn0nApUOxx0zB/dm6UDU/rEwc2c3sX2smWUNbapHv+QRqLGVp9GWX3THIa7MUGPo+YkDzQ==}
+
+  tailwindcss-animate@1.0.7:
+    resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+
+  tailwindcss-shadcn-ui@0.2.0:
+    resolution: {integrity: sha512-5VfcLQwrXwJdym214YgyyfmCJZug7HECdXW2Dhp3GDLjYLgl62NZwyrG9rilHufo3CdCRNnhazcoH0pl39rQmg==}
+    engines: {node: '>=18', pnpm: '>=8'}
+    peerDependencies:
+      tailwindcss: '>=3.2'
+      tailwindcss-animate: '>=1'
 
   tailwindcss@4.1.7:
     resolution: {integrity: sha512-kr1o/ErIdNhTz8uzAYL7TpaUuzKIE6QPQ4qmSdxnoX/lo+5wmUHQA6h3L5yIqEImSRnAAURDirLu/BgiXGPAhg==}
@@ -4095,6 +4110,15 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   tailwind-merge@3.3.0: {}
+
+  tailwindcss-animate@1.0.7(tailwindcss@4.1.7):
+    dependencies:
+      tailwindcss: 4.1.7
+
+  tailwindcss-shadcn-ui@0.2.0(tailwindcss-animate@1.0.7(tailwindcss@4.1.7))(tailwindcss@4.1.7):
+    dependencies:
+      tailwindcss: 4.1.7
+      tailwindcss-animate: 1.0.7(tailwindcss@4.1.7)
 
   tailwindcss@4.1.7: {}
 
