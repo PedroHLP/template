@@ -1,19 +1,28 @@
 'use client';
-import { Button } from '@/components/atoms/button';
-import React from 'react';
 
-const Dashboard = () => {
-    return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-            <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-            <p className="text-lg">Welcome to the dashboard!</p>
-            
-            <Button variant='destructive' className="mt-4">
-                teste
-            </Button>
+import React from "react";
+import { usePokemon } from "@/hooks/use-pokemon";
 
-        </div>
-    );
+export default function PokemonPage() {
+  const { data, isLoading, isError, error } = usePokemon();
+
+  if (isLoading) return <p>Carregando pokémon...</p>;
+  if (isError)
+    return <p className="text-red-600">Erro: {error?.message}</p>;
+
+  return (
+    <main className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Pokémon da 1ª Geração</h1>
+      <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {data!.results.map((poke) => (
+          <li
+            key={poke.name}
+            className="border rounded-lg p-2 text-center hover:shadow"
+          >
+            {poke.name}
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
 }
-
-export default Dashboard;
